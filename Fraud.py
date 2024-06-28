@@ -11,3 +11,6 @@ import matplotlib.pyplot as plt
 # Models
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor, BaggingRegressor
 from sklearn.kernel_ridge import KernelRidge
+from sklearn.linear_model import ElasticNet, ElasticNetCV
+from sklearn.svm import SVR
+from mlxtend.regressor import
