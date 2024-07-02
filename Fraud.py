@@ -1,4 +1,4 @@
-#importing libraries 
+q#importing libraries 
 import numpy as np
 import pandas as pd
 import datetime
@@ -28,3 +28,10 @@ from scipy.stats import boxcox_normmax
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import scale
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import RobustScaler
+from sklearn.decomposition import PCA
