@@ -35,3 +35,9 @@ from sklearn.preprocessing import scale
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import RobustScaler
 from sklearn.decomposition import PCA
+
+
+# Ignore useless warnings
+import warnings
+warnings.filterwarnings(action="ignore")
+pd.options.display.max_seq_items = 8000
