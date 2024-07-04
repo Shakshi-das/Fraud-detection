@@ -41,3 +41,7 @@ from sklearn.decomposition import PCA
 import warnings
 warnings.filterwarnings(action="ignore")
 pd.options.display.max_seq_items = 8000
+Examining The Data:
+train = pd.read_csv('train.csv')
+test = pd.read_csv('test.csv')
+train.head()
