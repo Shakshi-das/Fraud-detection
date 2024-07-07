@@ -1,5 +1,6 @@
-#importing libraries 
+Importing libraries:
 
+#essentials
 import numpy as np
 import pandas as pd
 import datetime
