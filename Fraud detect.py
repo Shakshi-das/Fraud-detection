@@ -21,3 +21,6 @@ from sklearn.decomposition import PCA
 pca = PCA(n_components=26, random_state=0)
 legit_pca = pd.DataFrame(pca.fit_transform(legit), index=legit.index)
 fraud_pca = pd.DataFrame(pca.transform(fraud), index=fraud.index)
+
+legit_restored = pd.DataFrame(pca.inverse_transform(legit_pca), index=legit_pca.index)
+fraud_restored = pd.DataFrame(pca.inverse_transform(fraud_pca), index=fraud_pca.index)
