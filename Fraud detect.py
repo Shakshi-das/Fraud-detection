@@ -24,3 +24,13 @@ fraud_pca = pd.DataFrame(pca.transform(fraud), index=fraud.index)
 
 legit_restored = pd.DataFrame(pca.inverse_transform(legit_pca), index=legit_pca.index)
 fraud_restored = pd.DataFrame(pca.inverse_transform(fraud_pca), index=fraud_pca.index)
+
+#plot the loss for the legitimate transactions
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+sns.set()
+
+#Plot the loss for the fraudulent transactions.
+fraud_scores.plot(figsize = (12, 6))
+legit_scores.plot(figsize = (12, 6))
