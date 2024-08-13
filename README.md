@@ -3,7 +3,7 @@
 Model to detect fraud in credit card transactions 
 Using Random Forest Algorithm
 
-(Supervised learning) 
+(Unsupervised learning) 
 
 Dataset source- 
 kaggle.com 
