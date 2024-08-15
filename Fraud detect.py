@@ -43,6 +43,7 @@ import seaborn as sns
 sns.set()
 
 legit_scores.plot(figsize = (12, 6))
+fraud_scores.plot(figsize = (12, 6))
 
 #Plot the loss for the fraudulent transactions.
 fraud_scores.plot(figsize = (12, 6))
