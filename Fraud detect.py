@@ -11,7 +11,8 @@ df['Class'].value_counts()
 legit = df[df['Class'] == 0]
 fraud = df[df['Class'] == 1]
 
-# Drop the "Time" and "Class" columns
+# Drop the "Time" and "Class" columns 
+
 legit = legit.drop(['Time', 'Class'], axis=1)
 fraud = fraud.drop(['Time', 'Class'], axis=1)
 
