@@ -1,27 +1,30 @@
-#essential 
+#load the dataset 
 import pandas as pd
 
 df = pd.read_csv('Data/creditcard.csv')
 df.head()
 
+#rows of dataset
 df.info()
 df['Class'].value_counts()
 
+#dividing the dataset
 # Separate the samples by class
 legit = df[df['Class'] == 0]
 fraud = df[df['Class'] == 1]
 
 # Drop the "Time" and "Class" columns 
-
 legit = legit.drop(['Time', 'Class'], axis=1)
 fraud = fraud.drop(['Time', 'Class'], axis=1)
 
+#pca transform to legitimate transactions
 from sklearn.decomposition import PCA
 
 pca = PCA(n_components=26, random_state=0)
 legit_pca = pd.DataFrame(pca.fit_transform(legit), index=legit.index)
 fraud_pca = pd.DataFrame(pca.transform(fraud), index=fraud.index)
 
+#invert the transforms
 legit_restored = pd.DataFrame(pca.inverse_transform(legit_pca), index=legit_pca.index)
 fraud_restored = pd.DataFrame(pca.inverse_transform(fraud_pca), index=fraud_pca.index)
 
@@ -33,6 +36,7 @@ def get_anomaly_scores(df_original, df_restored):
     loss = pd.Series(data=loss, index=df_original.index)
     return loss
 
+#measuring the loss for both transactions
 legit_scores = get_anomaly_scores(legit, legit_restored)
 fraud_scores = get_anomaly_scores(fraud, fraud_restored)
 
@@ -43,8 +47,9 @@ import seaborn as sns
 sns.set()
 
 legit_scores.plot(figsize = (12, 6))
-fraud_scores.plot(figsize = (12, 6))
 
 #Plot the loss for the fraudulent transactions.
 fraud_scores.plot(figsize = (12, 6))
-legit_scores.plot(figsize = (12, 6))
+
+#plotting a confusion matrix
+threshold = 200
