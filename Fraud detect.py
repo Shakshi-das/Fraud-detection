@@ -53,3 +53,7 @@ fraud_scores.plot(figsize = (12, 6))
 
 #plotting a confusion matrix
 threshold = 200
+true_neg = legit_scores[legit_scores < threshold].count()
+false_pos = legit_scores[legit_scores >= threshold].count()
+true_pos = fraud_scores[fraud_scores >= threshold].count()
+false_neg = fraud_scores[fraud_scores < threshold].count()
