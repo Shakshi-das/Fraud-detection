@@ -57,3 +57,6 @@ true_neg = legit_scores[legit_scores < threshold].count()
 false_pos = legit_scores[legit_scores >= threshold].count()
 true_pos = fraud_scores[fraud_scores >= threshold].count()
 false_neg = fraud_scores[fraud_scores < threshold].count()
+
+labels = ['Legitimate', 'Fraudulent']
+mat = [[true_neg, false_pos], [false_neg, true_pos]]
