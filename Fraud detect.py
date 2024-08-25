@@ -1,4 +1,4 @@
-#load the dataset 
+#loading the dataset 
 import pandas as pd
 
 df = pd.read_csv('Data/creditcard.csv')
