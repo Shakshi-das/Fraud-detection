@@ -60,3 +60,9 @@ false_neg = fraud_scores[fraud_scores < threshold].count()
 
 labels = ['Legitimate', 'Fraudulent']
 mat = [[true_neg, false_pos], [false_neg, true_pos]]
+
+sns.heatmap(mat, square=True, annot=True, fmt='d', cbar=False, cmap='Blues',
+            xticklabels=labels, yticklabels=labels)
+
+plt.xlabel('Predicted label')
+plt.ylabel('True label')
